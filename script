@@ -3,6 +3,8 @@
 docker build -t testwebapplication .
 docker run -d -p 8080:80 testwebapplication
 
+sleep 1
+
 a=`curl http://localhost:8080/api/values`
 if [ "$a" == '["Test Completed"]' ]
 then
